@@ -351,13 +351,13 @@ class JMenuPopupTree extends JTree
 				case 0:
 					// _top
 					if ($tmp->accessKey)
-					$data = '<a href="'.$tmp->url.'" accesskey="'.$tmp->accessKey.'" title="Link to '.$new_name.'">'.$image.$tmp->name.'</a>';
+					$data = '<a href="'.$tmp->url.'" accesskey="'.$tmp->accessKey.'" title="Go to '.$new_name.'">'.$image.$tmp->name.'</a>';
 					else
-						$data = '<a href="'.$tmp->url.'" title="Link to '.$new_name.'">'.$image.$tmp->name.'</a>';
+						$data = '<a href="'.$tmp->url.'" title="Go to '.$new_name.'">'.$image.$tmp->name.'</a>';
 					break;
 				case 1:
 					// _blank
-					$data = '<a href="'.$tmp->url.'" target="_blank" title="Link to '.$new_name.'">'.$image.$tmp->name.'</a>';
+					$data = '<a href="'.$tmp->url.'" target="_blank" title="Go to '.$new_name.'">'.$image.$tmp->name.'</a>';
 					break;
 				case 2:
 					// window.open
@@ -365,11 +365,11 @@ class JMenuPopupTree extends JTree
 
 					// hrm...this is a bit dickey
 					$link = str_replace('index.php', 'index2.php', $tmp->url);
-					$data = '<a href="'.$link.'" onclick="window.open(this.href,\'targetWindow\',\''.$attribs.'\');return false;" title="Link to '.$new_name.'">'.$image.$tmp->name.'</a>';
+					$data = '<a href="'.$link.'" onclick="window.open(this.href,\'targetWindow\',\''.$attribs.'\');return false;" title="Go to '.$new_name.'">'.$image.$tmp->name.'</a>';
 					break;
 			}
 		} else {
-			$data = '<a title="Link to '.$new_name.'">'.$image.$tmp->name.'</a>';
+			$data = '<a title="Go to '.$new_name.'">'.$image.$tmp->name.'</a>';
 		}
 
 		return $data;
